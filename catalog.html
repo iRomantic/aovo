@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOVO - Российский диллер средвств индивидуальной мобильности</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo logo">Aovo</div>
+    <nav class="header__menu">
+      <ul class="header__menu-list menu">
+        <li class="menu__item">
+          <a href="./catalog.html" class="menu__link">Каталог</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">Доставка и оплата</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">Гарантия</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">Контакты</a>
+        </li>
+      </ul>
+      <button class="header__mobile-menu-button mobile-menu-button">Меню</button>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="section">
+      <h1 class="section__title catalog-title">Модельный ряд AOVO (партия для России)</h1>
+      <!-- список моделей -->
+      <ul class="section__catalog catalog-block"></ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-info-block">
+      <p class="footer-info-block__logo">Aovo</p>
+      <p class="footer-info-block__company">© AOVO-Sport Operating Company, LLC. 2016–2026</p>
+      <p class="footer-info-block__policy">Вся представленная на сайте информация, носит информационный характер и ни при каких условиях не является публичной офертой.</p>
+      <p class="footer-info-block__company">*Акции и промокоды не суммируются</p>
+    </div>
+    <div class="footer-right-block">
+      <div class="footer-block">
+        <b class="footer-block__title">Каталог</b>
+        <ul class="footer-block__list">
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo S1 New</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo S3 New</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro Lux</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro Es Max</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro Max</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <b class="footer-block__title">ИНФОрмация</b>
+        <ul class="footer-block__list">
+          <li class="footer-block__list-item">
+            info@aovo-pro.com
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Контакты</a>
+          </li>
+      </div>
+    </div>
+  </footer>
+  <template id="model-template">
+    <li class="catalog-block__item">
+      <a href="" class="catalog-block__link">
+        <img src="" class="catalog-block__link-img" alt="">
+        <h2 class="catalog-block__item-name"></h2>
+        <div class="catalog-block__price-box">
+          <p class="catalog-block__price"></p>
+          <button class="catalog-block__button">Купить сейчас</button>
+        </div>
+      </a>
+    </li>
+  </template>
+  <script src="./js/main.js"></script>
+  <script src="./js/models.js"></script>
+  <script>
+    const template = document.getElementById('model-template');
+    const catalogList = document.querySelector('.catalog-block');
+
+    Object.entries(models).forEach(([slug, model]) => {
+      // Клонируем содержимое template
+      const clone = template.content.cloneNode(true);
+
+      const link = clone.querySelector('.catalog-block__link');
+      const img = clone.querySelector('.catalog-block__link-img');
+      const name = clone.querySelector('.catalog-block__item-name');
+      const price = clone.querySelector('.catalog-block__price');
+
+      // Заполняем данные
+      link.href = `/model.html#${slug}`;
+      img.src = `./images/${slug}/${slug}-1.png`;
+      img.alt = model.name;
+      name.textContent = model.name;
+      price.textContent = `${model.price} ₽`;
+
+      // Добавляем в DOM
+      catalogList.appendChild(clone);
+    });
+
+  </script>
+</body>
+</html>

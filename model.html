@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOVO - Российский диллер средвств индивидуальной мобильности</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo logo">Aovo</div>
+    <nav class="header__menu">
+      <ul class="header__menu-list menu">
+        <li class="menu__item">
+          <a href="./catalog.html" class="menu__link">Каталог</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">Доставка и оплата</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">Гарантия</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__link">Контакты</a>
+        </li>
+      </ul>
+      <button class="header__mobile-menu-button mobile-menu-button">Меню</button>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="section">
+      <div class="model-block">
+        <div class="model-block__photo-block photo-block">
+          <div class="photo-block__main-photo-container">
+            <img src="" class="photo-block__main-photo-image" alt="">
+          </div>
+          <ul class="photo-block__photo-list">
+            <!-- <li class="photo-block__photo-item">
+              <img src="" alt="" class="photo-block__photo-img">
+            </li> -->
+          </ul>
+        </div>
+        <div class="model-block__description-block description-block">
+          <h1 class="description-block__title description-block__title">
+            <div>
+              <span class="description-block__title-emoji">🛴</span>
+              <span class="description-block__title-intro">Модель:</span>
+            </div>
+            <span class="description-block__title-model">AOVO PRO ES MAX</span>
+          </h1>
+          <p class="description-block__shipping">Доставим <span class="description-block__shipping_uppercase">бесплатно</span></p>
+          
+          <p class="description-block__description">Описание модели</p>
+          <div class="description-block__parameters-block">
+            <p class="description-block__parameters-title">Технические характеристики:</p>
+            <ul class="description-block__parameters-list">
+              <!-- <li class="description-block__parameters-item">
+                <b class="description-block__parameters-key">Акб</b>
+                <span class="description-block__parameters-value">15 mAh</span>
+              </li> -->
+            </ul>
+          </div>
+          <p class="description-block__description">Обратите внимание на дополнительные функции электросамоката: 
+            Bluetooth, приложение для смартфона, рекуперацию, водозащиту (IP65). Этот 
+            электросамокат не боится ездить по лужам – производитель дает гарантию! На колесах установлены 
+            перфорированные покрышки, мягкие, упругие, но их невозможно проколоть. Купить этот электросамокат 
+            вы сможете в нашем интернет магазине с доставкой.
+          </p>
+          <p class="description-block__price-block">
+            <span class="description-block__price-new">29990 ₽</span>
+            <span class="description-block__price-old">29990 ₽</span>
+          </p>
+          <button class="description-block__buy-button">Купить</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-info-block">
+      <p class="footer-info-block__logo">Aovo</p>
+      <p class="footer-info-block__company">© AOVO-Sport Operating Company, LLC. 2016–2026</p>
+      <p class="footer-info-block__policy">Вся представленная на сайте информация, носит информационный характер и ни при каких условиях не является публичной офертой.</p>
+      <p class="footer-info-block__company">*Акции и промокоды не суммируются</p>
+    </div>
+    <div class="footer-right-block">
+      <div class="footer-block">
+        <b class="footer-block__title">Каталог</b>
+        <ul class="footer-block__list">
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo S1 New</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo S3 New</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro Lux</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro Es Max</a>
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Aovo M365 Pro Max</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <b class="footer-block__title">ИНФОрмация</b>
+        <ul class="footer-block__list">
+          <li class="footer-block__list-item">
+            info@aovo-pro.com
+          </li>
+          <li class="footer-block__list-item">
+            <a href="" class="footer-block__list-item-link">Контакты</a>
+          </li>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+  <script src="./js/models.js"></script>
+  <script>
+    // Получаем ключ из hash
+    let key = decodeURIComponent(location.hash.substring(1));
+    let modelData = models[key];
+    if (!modelData) {
+      key = 'aovo-pro-es-max'; // по умолчанию
+      modelData = models[key];
+    }
+
+    // Устанавливаем значения
+    const modelTitle = document.querySelector('.description-block__title-model');
+    const modelPrice = document.querySelector('.description-block__price-new');
+    const modelPriceOld = document.querySelector('.description-block__price-old');
+    const modelDescription = document.querySelector('.description-block__description');
+
+    if (modelTitle) modelTitle.textContent = modelData.name;
+    if (modelPrice) modelPrice.textContent = `${modelData.price} ₽`;
+    if (modelPriceOld) modelPriceOld.textContent = `${modelData.price_old} ₽` || '';
+    if (modelDescription) modelDescription.textContent = modelData.description;
+
+    // Параметры
+    const paramsList = document.querySelector('.description-block__parameters-list');
+    if (paramsList) {
+      paramsList.innerHTML = ''; // очистка
+
+      Object.entries(modelData.parameters).forEach(([key, value]) => {
+        const li = document.createElement('li');
+        li.className = 'description-block__parameters-item';
+
+        const keyEl = document.createElement('b');
+        keyEl.className = 'description-block__parameters-key';
+        keyEl.textContent = `${key}:`;
+
+        const valueEl = document.createElement('span');
+        valueEl.className = 'description-block__parameters-value';
+        valueEl.textContent = value;
+
+        li.appendChild(keyEl);
+        li.appendChild(valueEl);
+
+        paramsList.appendChild(li);
+      });
+    }
+
+    // Установим картинки для модели
+    const photos = models[key].photo; // key — из hash, как в предыдущем скрипте
+    const photoList = document.querySelector('.photo-block__photo-list');
+    const mainPhoto = document.querySelector('.photo-block__main-photo-image');
+
+    // главное фото
+    mainPhoto.src = `./images/${key}/${photos[0]}`;
+
+    // маленькие картинки
+    if (photoList && photos && photos.length > 0) {
+      // На случай, если в разметке уже есть <li>, лучше очистить их
+      photoList.innerHTML = '';
+
+      photos.forEach((filename) => {
+        const li = document.createElement('li');
+        li.className = 'photo-block__photo-item';
+
+        const img = document.createElement('img');
+        img.className = 'photo-block__photo-img';
+        img.src = `./images/${key}/${filename}`; // путь к картинкам
+        img.alt = models[key].name;
+
+        li.appendChild(img);
+        photoList.appendChild(li);
+      });
+    }
+
+    // найти все микрокартинки и сделать их кликабельными
+    const allMiniImages = document.querySelectorAll('.photo-block__photo-img');
+    allMiniImages.forEach((image) => {
+      image.addEventListener('click', (event) => {
+        // меняем главную картинку при клике на маленькую
+        mainPhoto.src = event.target.src;
+      });
+    });
+
+  </script>
+</body>
+</html>
