@@ -29,9 +29,14 @@
   </header>
   <main class="main">
     <section class="section">
-      <h1 class="section__title catalog-title">Модельный ряд AOVO (партия для России)</h1>
-      <!-- список моделей -->
-      <ul class="section__catalog catalog-block"></ul>
+      <div class="garant-block">
+        <h1 class="garant-block__title">Представительство завода AOVO</h1>
+        <p class="garant-block__text"><strong>Пункт самовывоза:</strong></p>
+        <p class="garant-block__text">Адрес салона электротранспорта: Москва, МКАД 91 км, ул. Ярмарочная, с4Б (магазин AOVO RU)</p>
+        <p class="garant-block__text"><strong>Перед выездом уточняйте наличие</strong></p>
+        <p class="garant-block__text">Ежедневно 09:00-21:00</p>
+        <p class="garant-block__text">+7 (495) 320-95-22</p>
+      </div>
     </section>
   </main>
   <footer class="footer">
@@ -77,44 +82,6 @@
       </div>
     </div>
   </footer>
-  <template id="model-template">
-    <li class="catalog-block__item">
-      <a href="" class="catalog-block__link">
-        <img src="" class="catalog-block__link-img" alt="">
-        <h2 class="catalog-block__item-name"></h2>
-        <div class="catalog-block__price-box">
-          <p class="catalog-block__price"></p>
-          <button class="catalog-block__button">Купить сейчас</button>
-        </div>
-      </a>
-    </li>
-  </template>
   <script src="./js/main.js"></script>
-  <script src="./js/models.js"></script>
-  <script>
-    const template = document.getElementById('model-template');
-    const catalogList = document.querySelector('.catalog-block');
-
-    Object.entries(models).forEach(([slug, model]) => {
-      // Клонируем содержимое template
-      const clone = template.content.cloneNode(true);
-
-      const link = clone.querySelector('.catalog-block__link');
-      const img = clone.querySelector('.catalog-block__link-img');
-      const name = clone.querySelector('.catalog-block__item-name');
-      const price = clone.querySelector('.catalog-block__price');
-
-      // Заполняем данные
-      link.href = `./model.html#${slug}`;
-      img.src = `./images/${slug}/${slug}-1.png`;
-      img.alt = model.name;
-      name.textContent = model.name;
-      price.textContent = `${model.price} ₽`;
-
-      // Добавляем в DOM
-      catalogList.appendChild(clone);
-    });
-
-  </script>
 </body>
 </html>

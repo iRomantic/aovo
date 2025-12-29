@@ -15,13 +15,13 @@
           <a href="./catalog.html" class="menu__link">Каталог</a>
         </li>
         <li class="menu__item">
-          <a href="#" class="menu__link">Доставка и оплата</a>
+          <a href="shipping.html" class="menu__link">Доставка и оплата</a>
         </li>
         <li class="menu__item">
-          <a href="#" class="menu__link">Гарантия</a>
+          <a href="garant.html" class="menu__link">Гарантия</a>
         </li>
         <li class="menu__item">
-          <a href="#" class="menu__link">Контакты</a>
+          <a href="contact.html" class="menu__link">Контакты</a>
         </li>
       </ul>
       <button class="header__mobile-menu-button mobile-menu-button">Меню</button>
@@ -30,6 +30,13 @@
   <main class="main">
     <section class="section">
       <div class="model-block">
+        <h1 class="description-block__title description-block__title description-block__title_only-mobile">
+            <div>
+              <span class="description-block__title-emoji">🛴</span>
+              <span class="description-block__title-intro">Модель:</span>
+            </div>
+            <span class="description-block__title-model">AOVO PRO ES MAX</span>
+          </h1>
         <div class="model-block__photo-block photo-block">
           <div class="photo-block__main-photo-container">
             <img src="" class="photo-block__main-photo-image" alt="">
@@ -130,12 +137,16 @@
     }
 
     // Устанавливаем значения
-    const modelTitle = document.querySelector('.description-block__title-model');
+    const modelTitles = document.querySelectorAll('.description-block__title-model');
     const modelPrice = document.querySelector('.description-block__price-new');
     const modelPriceOld = document.querySelector('.description-block__price-old');
     const modelDescription = document.querySelector('.description-block__description');
 
-    if (modelTitle) modelTitle.textContent = modelData.name;
+    // может быть несколько title (на моб. версии название указывается дважды)
+    modelTitles.forEach(title => {
+      if (title) title.textContent = modelData.name;
+    });
+    // if (modelTitle) modelTitle.textContent = modelData.name;
     if (modelPrice) modelPrice.textContent = `${modelData.price} ₽`;
     if (modelPriceOld) modelPriceOld.textContent = `${modelData.price_old} ₽` || '';
     if (modelDescription) modelDescription.textContent = modelData.description;

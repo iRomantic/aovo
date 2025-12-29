@@ -25,7 +25,7 @@ body {
   gap: 5px;
   width: 100%;
   padding: 10px 20px;
-  background-color: #161616;
+  background-color: #0c0c0c;
   color: #fff;
   border-bottom: 1px solid orange;
   position: sticky;
@@ -82,7 +82,7 @@ body {
 
 .section_black {
   color: #fff;
-  background-color: #161616;
+  background-color: #0c0c0c;
 }
 
 /* Section 1 ---------------------- */
@@ -127,6 +127,7 @@ body {
 }
 
 .about-brand-block__button {
+  text-decoration: none;
   align-self: flex-start;
   margin: 20px 0 0 0;
   padding: 10px 20px;
@@ -142,7 +143,7 @@ body {
 .about-brand-block__button:hover {
   background-color: orange;
   border: 1px solid orange;
-  color: #161616;
+  color: #0c0c0c;
 }
 
 /* Section 2 ---------------------*/
@@ -331,7 +332,7 @@ body {
   padding: 10px;
   border: 1px solid #707070;
   border-radius: 8px;
-  color: #161616;
+  color: #0c0c0c;
   transition: .3s;
 }
 
@@ -356,9 +357,12 @@ body {
 }
 
 .catalog-block__price {
+  padding: 5px 10px;
+  background-color: orange;
+  color: #0c0c0c;
+  border-radius: 4px;
   font-size: 18px;
   font-weight: 700;
-  color: rgb(27, 187, 27);
   text-align: center;
 }
 
@@ -369,7 +373,7 @@ body {
   font-size: 16px;
   font-weight: 600;
   background-color: transparent;
-  color: orange;
+  color: #0c0c0c;
   cursor: pointer;
   transition: .3s;
 }
@@ -403,7 +407,7 @@ body {
 }
 
 .photo-block__main-photo-image {
-  width: auto;
+  width: 420px;
   height: 420px;
 }
 
@@ -424,7 +428,7 @@ body {
 
 .photo-block__photo-img {
   width: 80px;
-  height: auto;
+  height: 80px;
 }
 
 .description-block {
@@ -443,6 +447,10 @@ body {
   text-transform: uppercase;
 }
 
+.description-block__title_only-mobile {
+  display: none;
+}
+
 .description-block__title-emoji {
   transform: translate(0, -2px);
   font-size: 20px;
@@ -454,7 +462,12 @@ body {
 }
 
 .description-block__shipping {
-  color: #707070;
+  padding: 10px;
+  background-color: orange;
+  color: #0c0c0c;
+  font-weight: 600;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .description-block__shipping_uppercase {
@@ -464,13 +477,17 @@ body {
 .description-block__price-block {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 20px;
 }
 
 .description-block__price-new {
+  padding: 5px 10px;
+  background-color: orange;
+  border-radius: 4px;
   font-size: 24px;
   font-weight: 600;
-  color: orange;
+  color: #0c0c0c;
 }
 
 .description-block__price-old {
@@ -478,6 +495,10 @@ body {
   font-weight: 500;
   color: #707070;
   text-decoration: line-through;
+}
+
+.description-block__description {
+  color: #707070;
 }
 
 .description-block__buy-button {
@@ -491,12 +512,9 @@ body {
   transition: .3s;
 }
 
-.description-block__description {
-  color: #707070;
-}
-
 .description-block__buy-button:hover {
   background-color: orange;
+  border: 1px solid #0c0c0c;
 }
 
 .description-block__parameters-block {
@@ -506,6 +524,9 @@ body {
 }
 
 .description-block__parameters-title {
+  padding: 5px 10px;
+  background-color: orange;
+  border-radius: 4px;
   font-size: 20px;
   font-weight: 600;
 }
@@ -529,13 +550,69 @@ body {
   left: -20px; /* или padding-left ul */
 }
 
+/* Shipping ------------------------------------- */
+.shipping-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 0 0 0;
+}
+
+.shipping-block__shipping-slug {
+  text-transform: uppercase;
+}
+
+.shipping-block__title {
+  padding: 20px 0;
+  font-size: 44px;
+  text-align: center;
+}
+
+.shipping-block__text {
+  font-size: 18px;
+}
+
+.shipping_block__link-button {
+  text-decoration: none;
+  padding: 10px;
+  background-color: orange;
+  color: #0c0c0c;
+  border-radius: 4px;
+}
+
+/* Garant ------------------------------------- */
+.garant-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 0 0 0;
+}
+
+.garant-block__title {
+  padding: 20px 0;
+  font-size: 44px;
+  text-align: center;
+}
+
+.garant-block__text {
+  font-size: 18px;
+}
+
 /* Footer --------------------------------------- */
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 60px 60px 30px 60px;
-  border-top: 1px solid #161616;
+  border-top: 1px solid #0c0c0c;
   background-color: #000;
 }
 
@@ -594,6 +671,7 @@ body {
 @media screen and (max-width: 1000px) {
   .header {
     height: 58px;
+    padding: 10px 5px 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -621,7 +699,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #161616;
+    background-color: #0c0c0c;
     transition: .3s;
   }
 
@@ -650,6 +728,7 @@ body {
   .about-shop-block {
     width: 100%;
     flex-direction: column;
+    padding: 0;
   }
 
   .about-shop-block__text-block {
@@ -679,35 +758,75 @@ body {
   }
 
   /* Catalog ---------------------- */
+  .catalog-title {
+    padding: 40px 0 20px;
+    font-size: 32px;
+  }
+
   .catalog-block {
     flex-direction: column;
     width: 100%;
   }
 
+  .catalog-block__item {
+    width: 100%;
+  }
+
+  .catalog-block__link {
+    width: 100%;
+  }
+
+  .catalog-block__link-img {
+    width: 100%;
+    height: auto;
+  }
+
   /* Model ------------------------ */
   .model-block {
     flex-direction: column;
+    gap: 20px;
     width: 100%;
-    padding: 80px 0 0 0;
+    padding: 60px 0 0 0;
   }
 
   .description-block__title {
     flex-direction: column;
-    font-size: 38px;
+    font-size: 32px;
     text-align: center;
   }
 
+  .description-block__title_only-mobile {
+    display: flex;
+  }
+
   .description-block__title-emoji {
+    display: none;
     font-size: 26px;
     transform: translate(0, -20px);
   }
 
+  .description-block__title-intro {
+    display: none;
+  }
+
   .photo-block__main-photo-container {
     width: 100%;
+     height: calc(100vw - 40px);
   }
 
   .photo-block__main-photo-image {
     width: 100%;
+    height: calc(100vw - 40px);
+  }
+
+  .photo-block__photo-item {
+    width: calc((100vw - 60px) / 5);
+    height: calc((100vw - 60px) / 5);
+  }
+
+  .photo-block__photo-img {
+     width: calc((100vw - 60px) / 5);
+    height: calc((100vw - 60px) / 5);
   }
 
 
@@ -715,12 +834,20 @@ body {
   .footer {
     flex-direction: column;
     gap: 50px;
+    padding: 20px;
   }
 
   .footer-info-block {
     width: 100%;
   }
 
+  .footer-right-block {
+    justify-content: space-between;
+  }
+
+  .footer-block {
+    font-size: 14px;
+  }
 
 }
 
